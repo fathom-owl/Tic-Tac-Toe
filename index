@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+// Function to calculate the factorial of a number
+int calculateFactorial(int n) {
+    if (n == 0 || n == 1) {
+        return 1;
+    } else {
+        return n * calculateFactorial(n - 1);
+    }
+}
+
+int main() {
+    // Get user input for the number
+    int number;
+    printf("Enter a number to calculate its factorial: ");
+    scanf("%d", &number);
+
+    // Check for non-negative input
+    if (number < 0) {
+        printf("Factorial is undefined for negative numbers.\n");
+        return 1; // Exit with an error code
+    }
+
+    // Calculate the factorial
+    int factorial = calculateFactorial(number);
+
+    // Display the result
+    printf("The factorial of %d is: %d\n", number, factorial);
+
+    return 0;
+}
